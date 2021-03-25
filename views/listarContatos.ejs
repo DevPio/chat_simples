@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <%- include('components/Head') -%>
+  <body>
+    <%- include('components/Header') -%>
+   
+      
+       <div class="row d-flex justify-content-center">
+        <h1>Seus contatos</h1>
+        
+       </div>
+       
+       <div class="container">
+        <div class="row">
+       
+      
+       
+
+        
+            <% for(var i=0; i < contatos.length; i++) { %>
+              <div class="col-sm">
+                  <div class="card " >
+                      <div class="card-header">Dados do contato</div>
+                      <div class="card-body text-secondary">
+                        <h5 class="card-title"><%= contatos[i].email %></h5>
+                        <p class="card-text"><%= contatos[i].nome %></p>
+                        <p class="card-text"><a class="btn btn-light" href="/contatos/<%= contatos[i].id %>">Editar</a></p>
+                        <p class="card-text"><a class="btn btn-light" href="/chat">Conversar</a></p>
+
+                      </div>
+                    </div>
+              </div>
+      
+           <% } %>
+         </div>
+       </div>
+     
+     
+
+
+      <%- include('components/rodape') -%>
+  </body>
+</html>
